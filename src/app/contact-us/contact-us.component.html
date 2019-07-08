@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<div class="container" style="padding-top:5px; width:600px ">
+
+        <form class="form-signin">
+         
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Enter Details</h1>
+         
+          <input type="text"  class="form-control" placeholder="First Name" required="" autofocus="" [(ngModel)]="fname" name="fname">
+          <hr>
+       
+          <input type="text"  class="form-control" placeholder="Last Name" required="" [(ngModel)]="lname" name="lname">
+             <hr>
+            
+          <input type="text"  class="form-control" placeholder="Mobile Number" required="" [(ngModel)]="mobile" name="mobile">
+             <hr>
+            
+          <input type="email"  class="form-control" placeholder="Email Address" required="" [(ngModel)]="email" name="email">
+             <hr>
+            
+          <input type="text"  class="form-control" placeholder="Address" required="" [(ngModel)]="address" name="address">
+             <hr>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="addData()">Submit</button>
+        
+        </form>
+      
+    </div>
+    <hr>
+    <div class="container" style="padding-top:5px;width:800px">
+      Search Data:  <input type="text" [(ngModel)]="serach"> 
+        <hr>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email ID</th>
+          <th>Mobile</th>
+          <th>Address</th>
+        </tr>
+        
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of getData | filter:serach">
+          <td>{{a.firstname}}</td>
+          <td>{{a.lastname}}</td>
+          <td>{{a.email}}</td>
+          <td>{{a.mobile}}</td>
+          <td>{{a.address}}</td>
+          
+        </tr>
+       
+      </tbody>
+    </table>
+  
+  </div>
+            
